@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<div id="artists">
+  <h1>Artists</h1>
+  <table>
+    <tbody>
+      <% artists.forEach(function(artist) { %>
+      <tr>
+        <td><%= artist.name %></td>
+        <td><%= artist.songs[0].title %></td>
+        <td>Albums</td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>
