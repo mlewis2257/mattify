@@ -1,4 +1,41 @@
 <%- include('../partials/header') %>
-<h1>playlist.name</h1>
-if(playlist.lenth > 0){ <%- playlists.forEach(function(playlist){ %> } <%-
-include('../partials/footer') %>
+<div class="container">
+  <h1><%= playlist.name %></h1>
+  <form action="/playlists/<%= playlist._id %>" method="POST">
+    <select id="" name="artist">
+      <% artists.forEach(function(artist){ %>
+      <option value="<%= artist._id %>"><%= artist.name %></option>
+      <% }); %>
+    </select>
+    <button type="submit" value="Add Artist">Add Artist Catalog</button>
+  </form>
+  <h3>Music List</h3>
+  <% if(playlist.length > 0){ playlist.forEach(function(p){ %>
+  <table>
+    <tr>
+      <td><%= p.artists.name %></td>
+      <td><%= p.artists.songs[0].title %></td>
+      <td><%= p.artists.albums[0].title %></td>
+    </tr>
+  </table>
+  <% }) %> <% } else { %> <% } %> <% playlist.artists.forEach(function(a){ %>
+  <table>
+    <tr class="artist">
+      <td><%= a.name %></td>
+      <td><%= a.songs[0].title %></td>
+    </tr>
+  </table>
+
+  <% }) %>
+  <div id="playlists-btns">
+    <form action="/playlists/<%= playlist._id %>?_method=PUT" method="POST">
+      <!-- Value attribute is being set to the comment's current text -->
+      <input name="name" value="" />
+      <button type="submit">Update Playlist Name</button>
+    </form>
+    <form action="/playlists/<%= playlist._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Playlist</button>
+    </form>
+  </div>
+</div>
+<%- include('../partials/footer') %>

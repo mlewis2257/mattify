@@ -6,7 +6,12 @@ const playlistSchema = new Schema({
     type: String,
     required: true,
   },
-  songs: [String],
+  artists: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Artist",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Playlist", playlistSchema);

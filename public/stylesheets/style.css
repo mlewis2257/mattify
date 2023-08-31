@@ -25,6 +25,19 @@ a {
   right: 0;
 }
 
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#home h1 {
+  font-size: 50px;
+}
+#home p {
+  font-size: 20px;
+}
+
 #main-nav {
   display: flex;
   align-items: center;
@@ -37,8 +50,16 @@ a {
 #main-nav a {
   padding: 20px;
 }
+#main-nav a:hover {
+  color: rgb(97, 213, 239);
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
 #artists {
-  margin-left: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 td {
@@ -48,4 +69,20 @@ td {
 #logo {
   height: 200px;
   width: 200px;
+}
+#playlist_container {
+  margin-left: 20px;
+}
+#playlist_container a:hover {
+  color: rgb(97, 213, 239);
+  border: 1px solid rgb(97, 213, 239);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  transition: 0.4s all ease-in-out;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

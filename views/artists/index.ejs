@@ -6,9 +6,8 @@
     <tbody>
       <% artists.forEach(function(artist) { %>
       <tr>
-        <td><%= artist.name %></td>
-        <td><%= artist.songs[0].title %></td>
-        <td>Albums</td>
+        <td style="font-size: 20px"><%= artist.name %></td>
+        <td>"<%= artist.songs[0].title %>"</td>
       </tr>
       <% }); %>
     </tbody>

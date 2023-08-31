@@ -7,6 +7,10 @@ module.exports = {
   new: newPlaylist,
   create,
   show,
+  addToPlaylist,
+  edit,
+  update,
+  delete: deletePlaylist,
 };
 
 async function index(req, res) {
@@ -25,7 +29,34 @@ async function create(req, res) {
   res.redirect(`/playlists`);
 }
 
+async function addToPlaylist(req, res) {
+  const playlist = await Playlist.findById(req.params.id);
+  playlist.artists.push(req.body.artist);
+  await playlist.save();
+  console.log(playlist, req.body);
+  res.redirect(`/playlists/${playlist.id}`);
+}
+
 async function show(req, res) {
-  const playlist = await Playlist.findById(req.params.id).populate("songs");
-  res.render("playlists/show", { playlist });
+  const playlist = await Playlist.findById(req.params.id).populate("artists");
+  const artists = await Artist.find({});
+  console.log(playlist);
+  res.render("playlists/show", { title: "Playlist", playlist, artists });
+}
+
+async function edit(req, res) {
+  const playlist = await Playlist.findById(req.params.id);
+  if (!playlist) return res.redirect("/playlists");
+  res.render("playlists/edit", { playlist });
+}
+
+async function update(req, res) {
+  const playlist = await Playlist.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  res.redirect(`/playlists/${playlist.id}`);
+}
+async function deletePlaylist(req, res) {
+  await Playlist.findByIdAndDelete(req.params.id);
+  res.redirect("/playlists");
 }
