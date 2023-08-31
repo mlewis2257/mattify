@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
-
-<form action="/playlists" method="POST">
-  <input type="text" name="name" placeholder="Name of Playlist" />
-  <input type="submit" value="create" />
-</form>
+<div id="playlist_container">
+  <form action="/playlists" method="POST">
+    <input type="text" name="name" placeholder="Name of Playlist" />
+    <button type="submit" value="create">Create Playlist</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

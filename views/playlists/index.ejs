@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 <div id="playlist_container">
   <div>
-    <a href="/playlists/new"><h1>Create Playlist</h1></a>
+    <a href="/playlists/new"
+      ><h1 style="font-size: 36px">Create Playlist</h1></a
+    >
   </div>
   <div id="playlist">
-    <h3>Playlist Name:</h3>
+    <h3 style="font-size: 24px">Playlist Name:</h3>
     <% playlists.forEach(function(playlist){ %>
-    <h4>
+    <h4 style="font-size: 20px">
       <a href="/playlists/<%= playlist._id %>"><%= playlist.name %></a>
     </h4>
     <% }); %>
