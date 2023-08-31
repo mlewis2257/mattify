@@ -89,10 +89,10 @@ td {
   align-content: center;
 }
 #playlist_container input {
-  width: 100%;
+  width: 20vw;
 }
 #playlist_container button {
-  width: 100%;
+  width: 20vw;
 }
 #playlist_container button:hover {
   background-color: rgb(97, 213, 239);
