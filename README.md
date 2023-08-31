@@ -1,3 +1,12 @@
+<img src="https://i.imgur.com/u3yKzcW.png"/>
+<h1>Technologies</h1>
+- HTML
+- CSS
+- JavaScript
+- Node.JS
+- Express.JS
+- MongoDB
+
 Mattify App is a Web Application that allows users to sign into the site using Google Authentication, and be able to create, read, update and delete playlists as they deem necessary. It was built using Node.Js/Express.Js for the backend configuration. MongoDB is used storing our data remotely to be able to access different artists and songs for application. Also includes uses EJS for rendering the frontend of the application.
 
 The backend of the app uses RESTful routing conventions to CRUD data for playlists. The artist data was added to the MongoDB using a seed.js and data.js file to export and push to our remote database.
